@@ -36,10 +36,8 @@ body {
 
 %CTA {
   display: grid;
-  width: 375px;
-  height: inherit;
   grid-template-columns: 1fr;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 50% 50%;
   grid-template-areas:
       "2-part-heading"
       "para-with-link";
@@ -95,31 +93,31 @@ body {
 }
 
 .hero-cta {
+  @extend %CTA;
   color: $white;
   margin: 50px;
   width: 50%;
   height: 100%;
 
-  .hero-cta-heading {
+  & > .two-part-heading  {
     margin: 10px 0;
 
-    & > .hero-cta-heading-top {
+    & > .two-part-top {
       font-size: 1.4em;
       font-weight: 100;
     }
     
-    & > .hero-cta-heading-bottom {
+    & > .two-part-bottom {
       font-size: 1.4em;
       font-weight: 200;
     }
   }
 
-  .hero-cta-text {
+  & > .para-with-link {
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em;
   }
-
 }
 
 .hero-links {
@@ -134,7 +132,6 @@ body {
     justify-content: center;
   }
 }
-
 .hero-link {
   width: 180px;
   max-height: 80px;
@@ -183,21 +180,24 @@ body {
 
   & > .two-part-heading {
     grid-area: 2-part-heading;
+    margin: 10px 0;
     
     & > .two-part-top {
       font-size: 1.2rem;
-      font-weight: 200;
+      font-weight: 100;
     }
     
     & > .two-part-bottom {
-      font-size: 1.3rem;
+      font-size: 1.4em;
+      font-weight: 200;
     }
   }
   
   & > .para-with-link {
     grid-area: para-with-link;
-
-
+    margin: 10px 0;
+    font-weight: normal;
+    font-size: 1.1em;
   }
 }
 

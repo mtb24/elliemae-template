@@ -20,14 +20,12 @@ body {
   margin: 0;
   background: #b2b3b7; }
 
-.cta1 {
+.hero-cta, .cta1 {
   display: grid;
-  width: 375px;
-  height: inherit;
   grid-template-columns: 1fr;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 50% 50%;
   grid-template-areas: "2-part-heading" "para-with-link"; }
-  .cta1 .para-with-link > a.cta {
+  .hero-cta .para-with-link > a.cta, .cta1 .para-with-link > a.cta {
     display: block;
     width: 100px; }
 
@@ -70,15 +68,15 @@ body {
   margin: 50px;
   width: 50%;
   height: 100%; }
-  .hero-cta .hero-cta-heading {
+  .hero-cta > .two-part-heading {
     margin: 10px 0; }
-    .hero-cta .hero-cta-heading > .hero-cta-heading-top {
+    .hero-cta > .two-part-heading > .two-part-top {
       font-size: 1.4em;
       font-weight: 100; }
-    .hero-cta .hero-cta-heading > .hero-cta-heading-bottom {
+    .hero-cta > .two-part-heading > .two-part-bottom {
       font-size: 1.4em;
       font-weight: 200; }
-  .hero-cta .hero-cta-text {
+  .hero-cta > .para-with-link {
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em; }
@@ -130,14 +128,19 @@ body {
   grid-area: cta1;
   background-color: #ffffff; }
   .cta1 > .two-part-heading {
-    grid-area: 2-part-heading; }
+    grid-area: 2-part-heading;
+    margin: 10px 0; }
     .cta1 > .two-part-heading > .two-part-top {
       font-size: 1.2rem;
-      font-weight: 200; }
+      font-weight: 100; }
     .cta1 > .two-part-heading > .two-part-bottom {
-      font-size: 1.3rem; }
+      font-size: 1.4em;
+      font-weight: 200; }
   .cta1 > .para-with-link {
-    grid-area: para-with-link; }
+    grid-area: para-with-link;
+    margin: 10px 0;
+    font-weight: normal;
+    font-size: 1.1em; }
 
 .cta2 {
   background-image: url("images/background/encompass-ng-background.png");
