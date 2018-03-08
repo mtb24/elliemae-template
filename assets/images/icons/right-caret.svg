@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="32px" viewBox="0 0 17 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1494.000000, -2346.000000)">
+        <path d="M1508.94735,2377.643 L1494.3456,2362.84313 C1493.8848,2362.37613 1493.8848,2361.62414 1494.3456,2361.15714 L1508.94735,2346.35727 C1509.41315,2345.88427 1510.17283,2345.88127 1510.64363,2346.34627 C1511.11443,2346.81226 1511.11942,2347.57126 1510.65462,2348.04325 L1496.88552,2362.00013 L1510.65462,2375.95702 C1511.11942,2376.42901 1511.11443,2377.18801 1510.64363,2377.654 C1510.40973,2377.885 1510.10586,2378 1509.80099,2378 C1509.49112,2378 1509.18225,2377.881 1508.94735,2377.643 Z" id="Icon" fill="#00ADDA" transform="translate(1502.500000, 2362.000000) scale(-1, 1) translate(-1502.500000, -2362.000000) "></path>
+    </g>
+</svg>

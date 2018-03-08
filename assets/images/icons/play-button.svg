@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="148px" viewBox="0 0 148 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-886.000000, -2292.000000)">
+        <g id="Group-5" transform="translate(888.000000, 2294.000000)" stroke="#FFFFFF">
+            <g id="Icons-/-Play-Icon-57px" transform="translate(54.000000, 25.000000)" fill="#FFFFFF">
+                <path d="M3,4.6348 L3,85.3648 L53.109,44.9998 L3,4.6348 Z M1.5,89.9998 C1.279,89.9998 1.059,89.9518 0.853,89.8538 C0.332,89.6038 0,89.0768 0,88.4998 L0,1.4998 C0,0.9228 0.332,0.3968 0.853,0.1468 C1.373,-0.1002 1.99,-0.0302 2.441,0.3318 L56.441,43.8318 C56.795,44.1158 57,44.5458 57,44.9998 C57,45.4538 56.795,45.8838 56.441,46.1678 L2.441,89.6678 C2.169,89.8868 1.836,89.9998 1.5,89.9998 L1.5,89.9998 Z" id="Icon"></path>
+            </g>
+            <circle id="Oval-2" stroke-width="4" cx="72" cy="72" r="72"></circle>
+        </g>
+    </g>
+</svg>
