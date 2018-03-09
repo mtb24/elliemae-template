@@ -4,6 +4,7 @@ $white: #ffffff;
 $black: #272727;
 $orange: #f59131;
 $green: #39a154;
+$ltblue: rgb(27,156,210);
 $dark-blue: #005181;
 $video_heading_color: #39a053;
 $quote-author: #0068a9;
@@ -67,6 +68,9 @@ body {
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em;
+    & > .para-spacer {
+      display: block;
+    }
     & > a.cta {
       grid-area: para-with-link;
       width: 150px;
@@ -78,25 +82,27 @@ body {
 }
 
 %HeroLink {
-  width: 180px;
+  max-width: 200px;
   max-height: 80px;
   color: $white;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 65px;
   grid-template-areas: "details icon";
   justify-items: center;
   align-items: center;
 
   & > .hero-link-details {
     grid-area: details;
+    padding-left: 1rem;
 
     & > .hero-link-title {
       font-size: 12px;
       font-weight: normal;
+      margin: 5px 0;
     }
     & > .hero-link-description {
       font-size: 10px;
-      font-weight: normal;
+      font-weight: lighter;
     }
   }
 
@@ -104,6 +110,7 @@ body {
     grid-area: icon;
     align-content: center;
     justify-content: center;
+    place-items: center center;
   }
 }
 
@@ -122,6 +129,14 @@ body {
     background-color: darken($orange, 5%);
   }
 }
+.btn-ltblue {
+  @extend %Button;
+  background-color: $ltblue;
+  &:focus,
+  &:hover {
+    background-color: darken($ltblue, 5%);
+  }
+}
 .icon {
   margin: 0;
 }
@@ -133,7 +148,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 250px 225px 1fr 60px;
+  grid-template-rows: 300px 1fr 330px 1fr 60px;
   grid-gap: 0px;
   grid-template-areas: 
       "top"
@@ -159,75 +174,103 @@ body {
 }
 
 .hero-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-  width: 50%;
-  margin: 25px 100px 0 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  width: 40%;
+  margin: 20px 0 0 0;
 
-  & > a.hero-links-wrapper {
-    justify-content: center;
-  }
-  #link1 {
-    @extend %HeroLink;
-    background-color: $orange;
-  }
-  #link2 {
-    @extend %HeroLink;
-    background-color: $green;
-  }
-  #link3 {
-    @extend %HeroLink;
-    background-color: $dark-blue;
+  & > a.hero-link-wrapper {
+    margin: 5px auto;
+
+    & > #link1 {
+      @extend %HeroLink;
+      background-color: $orange;
+    }
+    & > #link2 {
+      @extend %HeroLink;
+      background-color: $green;
+    }
+    & > #link3 {
+      @extend %HeroLink;
+      background-color: $dark-blue;
+    }
   }
 }
 
-
 .cta1 {
-  @extend %CTA;
   grid-area: cta1;
   background-color: $white;
   color: $black;
 }
 
 .cta2 {
+  @extend %CTA;
   grid-area: cta2;
   background-image: url('images/background/encompass-ng-background.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0px bottom;
+  display: grid;
+  grid-template-columns: 535px 50%;
+  grid-template-rows: 100%;
+  grid-template-areas: "logo cta";
+  height: 330px;
+  color: $white;
+  
+  & > #cta2-logo {
+    grid-area: logo;
+    margin: 13% 0 0 53%;
+  }
+  
+  & > .two-part-heading {
+    grid-area: cta;
+    margin: 30px 18%;
+  }
+  
+  & > .para-with-link {
+    grid-area: cta;
+    margin: 18% 18%;
+  }
 }
 
 .video {
   grid-area: video;
   text-align: center;
   background-color: $white;
-  padding: 65px 0;
+  padding: 5% 0 3% 0;
+  
   & > .video-heading {
     color: $video_heading_color;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
   }
+  
   & > .video-thumb {
-    width: 500px;
+    width: 45%;
   }
+  
   & > .quote {
     margin: 25px auto;
-    width: 48%;
+    width: 34%;
     line-height: 18px;
+  
     &:before {
       content: open-quote;
     }
+  
     &:after {
       content: close-quote;
     }
   }
+  
   & > .quote-author {
     color: $quote-author;
     font-size: 1.1rem;
     margin-bottom: 3px;
   }
+  
   & > .quote-author-title {
     color: $quote-author-title;
     margin-top: 0px;
@@ -246,6 +289,7 @@ footer {
     
     & > a.footer {
       margin-left: 20px;
+      font-size: 1.1rem;
     }
   }
 }

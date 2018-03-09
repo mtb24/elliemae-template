@@ -25,56 +25,61 @@ body {
   background-size: contain;
   background-position-x: center; }
 
-.hero-cta, .cta1 {
+.hero-cta, .cta2 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
   grid-template-areas: "2-part-heading" "para-with-link"; }
-  .hero-cta > .two-part-heading, .cta1 > .two-part-heading {
+  .hero-cta > .two-part-heading, .cta2 > .two-part-heading {
     grid-area: 2-part-heading;
     margin: 10px 0; }
-    .hero-cta > .two-part-heading > .two-part-top, .cta1 > .two-part-heading > .two-part-top {
+    .hero-cta > .two-part-heading > .two-part-top, .cta2 > .two-part-heading > .two-part-top {
       font-size: 3.2rem;
       font-weight: 100; }
-    .hero-cta > .two-part-heading > .two-part-bottom, .cta1 > .two-part-heading > .two-part-bottom {
+    .hero-cta > .two-part-heading > .two-part-bottom, .cta2 > .two-part-heading > .two-part-bottom {
       font-size: 3.0rem;
       font-weight: 200;
       line-height: 3.2rem; }
-  .hero-cta > .para-with-link, .cta1 > .para-with-link {
+  .hero-cta > .para-with-link, .cta2 > .para-with-link {
     grid-area: para-with-link;
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em; }
-    .hero-cta > .para-with-link > a.cta, .cta1 > .para-with-link > a.cta {
+    .hero-cta > .para-with-link > .para-spacer, .cta2 > .para-with-link > .para-spacer {
+      display: block; }
+    .hero-cta > .para-with-link > a.cta, .cta2 > .para-with-link > a.cta {
       grid-area: para-with-link;
       width: 150px;
       float: left;
       margin: 20px 0;
       text-align: center; }
 
-.hero-links #link1, .hero-links #link2, .hero-links #link3 {
-  width: 180px;
+.hero-links > a.hero-link-wrapper > #link1, .hero-links > a.hero-link-wrapper > #link2, .hero-links > a.hero-link-wrapper > #link3 {
+  max-width: 200px;
   max-height: 80px;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 65px;
   grid-template-areas: "details icon";
   justify-items: center;
   align-items: center; }
-  .hero-links #link1 > .hero-link-details, .hero-links #link2 > .hero-link-details, .hero-links #link3 > .hero-link-details {
-    grid-area: details; }
-    .hero-links #link1 > .hero-link-details > .hero-link-title, .hero-links #link2 > .hero-link-details > .hero-link-title, .hero-links #link3 > .hero-link-details > .hero-link-title {
+  .hero-links > a.hero-link-wrapper > #link1 > .hero-link-details, .hero-links > a.hero-link-wrapper > #link2 > .hero-link-details, .hero-links > a.hero-link-wrapper > #link3 > .hero-link-details {
+    grid-area: details;
+    padding-left: 1rem; }
+    .hero-links > a.hero-link-wrapper > #link1 > .hero-link-details > .hero-link-title, .hero-links > a.hero-link-wrapper > #link2 > .hero-link-details > .hero-link-title, .hero-links > a.hero-link-wrapper > #link3 > .hero-link-details > .hero-link-title {
       font-size: 12px;
-      font-weight: normal; }
-    .hero-links #link1 > .hero-link-details > .hero-link-description, .hero-links #link2 > .hero-link-details > .hero-link-description, .hero-links #link3 > .hero-link-details > .hero-link-description {
+      font-weight: normal;
+      margin: 5px 0; }
+    .hero-links > a.hero-link-wrapper > #link1 > .hero-link-details > .hero-link-description, .hero-links > a.hero-link-wrapper > #link2 > .hero-link-details > .hero-link-description, .hero-links > a.hero-link-wrapper > #link3 > .hero-link-details > .hero-link-description {
       font-size: 10px;
-      font-weight: normal; }
-  .hero-links #link1 > .link-icon, .hero-links #link2 > .link-icon, .hero-links #link3 > .link-icon {
+      font-weight: lighter; }
+  .hero-links > a.hero-link-wrapper > #link1 > .link-icon, .hero-links > a.hero-link-wrapper > #link2 > .link-icon, .hero-links > a.hero-link-wrapper > #link3 > .link-icon {
     grid-area: icon;
     align-content: center;
-    justify-content: center; }
+    justify-content: center;
+    place-items: center center; }
 
-.btn-orange {
+.btn-orange, .btn-ltblue {
   padding: 10px;
   border-radius: 3px;
   border: 0;
@@ -86,6 +91,11 @@ body {
   .btn-orange:focus, .btn-orange:hover {
     background-color: #f48419; }
 
+.btn-ltblue {
+  background-color: #1b9cd2; }
+  .btn-ltblue:focus, .btn-ltblue:hover {
+    background-color: #188bbb; }
+
 .icon {
   margin: 0; }
 
@@ -96,7 +106,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 250px 225px 1fr 60px;
+  grid-template-rows: 300px 1fr 330px 1fr 60px;
   grid-gap: 0px;
   grid-template-areas: "top" "cta1" "cta2" "video" "footer"; }
 
@@ -113,20 +123,20 @@ body {
   height: 75%; }
 
 .hero-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-  width: 50%;
-  margin: 25px 100px 0 0; }
-  .hero-links > a.hero-links-wrapper {
-    justify-content: center; }
-  .hero-links #link1 {
-    background-color: #f59131; }
-  .hero-links #link2 {
-    background-color: #39a154; }
-  .hero-links #link3 {
-    background-color: #005181; }
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  width: 40%;
+  margin: 20px 0 0 0; }
+  .hero-links > a.hero-link-wrapper {
+    margin: 5px auto; }
+    .hero-links > a.hero-link-wrapper > #link1 {
+      background-color: #f59131; }
+    .hero-links > a.hero-link-wrapper > #link2 {
+      background-color: #39a154; }
+    .hero-links > a.hero-link-wrapper > #link3 {
+      background-color: #005181; }
 
 .cta1 {
   grid-area: cta1;
@@ -138,22 +148,37 @@ body {
   background-image: url("images/background/encompass-ng-background.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0px bottom; }
+  background-position: 0px bottom;
+  display: grid;
+  grid-template-columns: 535px 50%;
+  grid-template-rows: 100%;
+  grid-template-areas: "logo cta";
+  height: 330px;
+  color: #ffffff; }
+  .cta2 > #cta2-logo {
+    grid-area: logo;
+    margin: 13% 0 0 53%; }
+  .cta2 > .two-part-heading {
+    grid-area: cta;
+    margin: 30px 18%; }
+  .cta2 > .para-with-link {
+    grid-area: cta;
+    margin: 18% 18%; }
 
 .video {
   grid-area: video;
   text-align: center;
   background-color: #ffffff;
-  padding: 65px 0; }
+  padding: 5% 0 3% 0; }
   .video > .video-heading {
     color: #39a053;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400; }
   .video > .video-thumb {
-    width: 500px; }
+    width: 45%; }
   .video > .quote {
     margin: 25px auto;
-    width: 48%;
+    width: 34%;
     line-height: 18px; }
     .video > .quote:before {
       content: open-quote; }
@@ -176,4 +201,5 @@ footer {
   footer > .footer-copy {
     font-size: 1.4rem; }
     footer > .footer-copy > a.footer {
-      margin-left: 20px; }
+      margin-left: 20px;
+      font-size: 1.1rem; }
