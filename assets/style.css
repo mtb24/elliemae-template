@@ -211,8 +211,13 @@ body {
     .cta1 > .cta1-icons-list > #icon-6 {
       background-image: url("/assets/images/icons/reporting-and-analytics.svg"); }
     .cta1 > .cta1-icons-list > #icon-7 {
+      margin-left: 55px;
       background-image: url("/assets/images/icons/compliance.svg");
-      margin-left: 60px; }
+      background-position: center;
+      background-color: #ffffff; }
+      .cta1 > .cta1-icons-list > #icon-7 > .cta1-icon-link {
+        background-color: #ffffff;
+        margin-bottom: 10px; }
   .cta1 > .cta1-btn {
     display: inline-block;
     margin: 25px auto; }

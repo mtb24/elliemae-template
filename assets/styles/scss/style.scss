@@ -297,8 +297,14 @@ body {
     }
     & > #icon-7 {
       @extend %IconLink;
+      margin-left: 55px;
       background-image: url('/assets/images/icons/compliance.svg');
-      margin-left: 60px;
+      background-position: center;
+      background-color: $white;
+      & > .cta1-icon-link {
+        background-color: $white;
+        margin-bottom: 10px;
+      }
     }
 
   }
