@@ -80,7 +80,27 @@ body {
     justify-content: center;
     place-items: center center; }
 
+.cta1 > .cta1-icons-list > #icon-1, .cta1 > .cta1-icons-list > #icon-2, .cta1 > .cta1-icons-list > #icon-3, .cta1 > .cta1-icons-list > #icon-4, .cta1 > .cta1-icons-list > #icon-5, .cta1 > .cta1-icons-list > #icon-6, .cta1 > .cta1-icons-list > #icon-7 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 35px;
+  grid-template-areas: "icon" "desc";
+  grid-gap: 0;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position-x: 20%;
+  background-size: 85%;
+  justify-items: center;
+  margin: 0 0 20px 0; }
+  .cta1 > .cta1-icons-list > #icon-1 > a, .cta1 > .cta1-icons-list > #icon-2 > a, .cta1 > .cta1-icons-list > #icon-3 > a, .cta1 > .cta1-icons-list > #icon-4 > a, .cta1 > .cta1-icons-list > #icon-5 > a, .cta1 > .cta1-icons-list > #icon-6 > a, .cta1 > .cta1-icons-list > #icon-7 > a {
+    grid-area: desc;
+    width: 90px; }
+
 .btn-orange, .btn-ltblue {
+  display: block;
+  width: 150px;
+  height: 34px;
   padding: 10px;
   border-radius: 3px;
   border: 0;
@@ -107,7 +127,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 1fr 330px 1fr 60px;
+  grid-template-rows: 300px 500px 330px 1fr 60px;
   grid-gap: 0px;
   grid-template-areas: "top" "cta1" "cta2" "video" "footer"; }
 
@@ -142,7 +162,60 @@ body {
 .cta1 {
   grid-area: cta1;
   background-color: #ffffff;
-  color: #272727; }
+  text-align: center; }
+  .cta1 > .cta1-heading {
+    color: #39a053;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 50px auto 10px auto; }
+  .cta1 > .cta1-copy {
+    color: #272727;
+    width: 55%;
+    margin: 20px auto;
+    line-height: 1.5rem; }
+  .cta1 > .cta1-icons-list {
+    list-style: none;
+    width: 90%;
+    max-width: 914px;
+    padding: 40px;
+    border: 0.1px solid lightgrey;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(12, 1fr); }
+    .cta1 > .cta1-icons-list > .cta1-icon {
+      display: inline-block;
+      width: 70px; }
+      .cta1 > .cta1-icons-list > .cta1-icon > .cta1-icon-link {
+        text-decoration: none;
+        color: #1b9cd2; }
+    .cta1 > .cta1-icons-list > .cta1-arrow {
+      background-image: url("/assets/images/icons/right-arrow.svg");
+      background-repeat: no-repeat;
+      background-position-y: 15px;
+      background-size: 90%;
+      width: 40px;
+      margin: 10px; }
+    .cta1 > .cta1-icons-list > #icon-1 {
+      background-image: url("/assets/images/icons/sales-and-marketing.svg"); }
+    .cta1 > .cta1-icons-list > #icon-2 {
+      background-image: url("/assets/images/icons/point-of-sale.svg"); }
+    .cta1 > .cta1-icons-list > #icon-3 {
+      background-image: url("/assets/images/icons/origination.svg"); }
+    .cta1 > .cta1-icons-list > #icon-4 {
+      background-image: url("/assets/images/icons/processing-and-underwriting.svg");
+      background-size: 75%; }
+    .cta1 > .cta1-icons-list > #icon-5 {
+      background-image: url("/assets/images/icons/eclosing-and-investor-delivery.svg");
+      background-size: 75%; }
+    .cta1 > .cta1-icons-list > #icon-6 {
+      background-image: url("/assets/images/icons/reporting-and-analytics.svg"); }
+    .cta1 > .cta1-icons-list > #icon-7 {
+      background-image: url("/assets/images/icons/compliance.svg");
+      margin-left: 60px; }
+  .cta1 > .cta1-btn {
+    display: inline-block;
+    margin: 25px auto; }
 
 .cta2 {
   grid-area: cta2;
@@ -200,7 +273,9 @@ footer {
   text-align: center;
   padding: 10px 0; }
   footer > .footer-copy {
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    margin-top: 5px; }
     footer > .footer-copy > a.footer {
+      display: inline-block;
       margin-left: 20px;
       font-size: 1.1rem; }

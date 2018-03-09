@@ -6,13 +6,14 @@ $orange: #f59131;
 $green: #39a154;
 $ltblue: rgb(27,156,210);
 $dark-blue: #005181;
-$video_heading_color: #39a053;
+$green-heading: #39a053;
 $quote-author: #0068a9;
 $quote-author-title: #00acd9;
 $footer_button_text: white;
 $footer_background_color: #005181;
 $bodyBackground: #b2b3b7;
 $button-text-color: $white;
+$icons-border-color: lightgrey;
 
 html {
   box-sizing: border-box;
@@ -115,7 +116,29 @@ body {
   }
 }
 
+%IconLink {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 35px;
+  grid-template-areas: "icon" "desc";
+  grid-gap: 0;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position-x: 20%;
+  background-size: 85%;
+  justify-items: center;
+  margin: 0 0 20px 0;
+  & > a {
+    grid-area: desc;
+    width: 90px;
+  }
+}
+
 %Button {
+  display: block;
+  width: 150px;
+  height: 34px;
   padding: 10px;
   border-radius: 3px;
   border: 0;
@@ -149,7 +172,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 1fr 330px 1fr 60px;
+  grid-template-rows: 300px 500px 330px 1fr 60px;
   grid-gap: 0px;
   grid-template-areas: 
       "top"
@@ -203,7 +226,86 @@ body {
 .cta1 {
   grid-area: cta1;
   background-color: $white;
-  color: $black;
+  text-align: center;
+
+  & > .cta1-heading {
+    color: $green-heading;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 50px auto 10px auto;
+  }
+  & > .cta1-copy {
+    color: $black;
+    width: 55%;
+    margin: 20px auto;
+    line-height: 1.5rem;
+  }
+  & > .cta1-icons-list {
+    list-style: none;
+    width: 90%;
+    max-width: 914px;
+    padding: 40px;
+    border: .1px solid $icons-border-color;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    
+    & > .cta1-icon {
+      display: inline-block;
+      width: 70px;
+      
+      & > .cta1-icon-link {
+        text-decoration: none;
+        color: $ltblue;
+      }
+    }
+
+    & > .cta1-arrow {
+      background-image: url('/assets/images/icons/right-arrow.svg');
+      background-repeat: no-repeat;
+      background-position-y: 15px;
+      background-size: 90%;
+      width: 40px;
+      margin: 10px;
+    }
+    & > #icon-1 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/sales-and-marketing.svg');
+    }
+    & > #icon-2 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/point-of-sale.svg');
+    }
+    & > #icon-3 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/origination.svg');
+    }
+    & > #icon-4 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/processing-and-underwriting.svg');
+      background-size: 75%;
+    }
+    & > #icon-5 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/eclosing-and-investor-delivery.svg');
+      background-size: 75%;
+    }
+    & > #icon-6 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/reporting-and-analytics.svg');
+    }
+    & > #icon-7 {
+      @extend %IconLink;
+      background-image: url('/assets/images/icons/compliance.svg');
+      margin-left: 60px;
+    }
+
+  }
+  & > .cta1-btn {
+    display: inline-block;
+    margin: 25px auto;
+  }
 }
 
 .cta2 {
@@ -243,7 +345,7 @@ body {
   padding: 5% 0 3% 0;
   
   & > .video-heading {
-    color: $video_heading_color;
+    color: $green-heading;
     font-size: 2.5rem;
     font-weight: 400;
   }
@@ -287,8 +389,10 @@ footer {
 
   & > .footer-copy {
     font-size: 1.4rem;
+    margin-top: 5px;
     
     & > a.footer {
+      display: inline-block;
       margin-left: 20px;
       font-size: 1.1rem;
     }
