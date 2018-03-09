@@ -348,7 +348,7 @@ body {
   grid-area: video;
   text-align: center;
   background-color: $white;
-  padding: 5% 0 3% 0;
+  margin: 70px auto;
   
   & > .video-heading {
     color: $green-heading;
@@ -356,8 +356,33 @@ body {
     font-weight: 400;
   }
   
-  & > .video-thumb {
-    width: 45%;
+  & > .video-player {
+    // display: grid;
+    // grid-template-areas: "left-caret main-image right-caret";
+    // grid-template-columns: 35px 45% 35px;
+    // align-items: center;
+
+    & > .left-caret {
+      float: left;
+      display: inline-block;
+      margin-top: 165px;
+    }
+    & > .video-thumb {
+      grid-area: main-image;
+      background-image: url('/assets/images/client-video.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      & > .play-button {
+        grid-area: main-image;
+        margin: 100px auto;
+      }
+    }
+    & > .right-caret {
+      float: right;
+      display: inline-block;
+      margin-top: -185px;
+    }
   }
   
   & > .quote {

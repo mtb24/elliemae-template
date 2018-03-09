@@ -248,13 +248,28 @@ body {
   grid-area: video;
   text-align: center;
   background-color: #ffffff;
-  padding: 5% 0 3% 0; }
+  margin: 70px auto; }
   .video > .video-heading {
     color: #39a053;
     font-size: 2.5rem;
     font-weight: 400; }
-  .video > .video-thumb {
-    width: 45%; }
+  .video > .video-player > .left-caret {
+    float: left;
+    display: inline-block;
+    margin-top: 165px; }
+  .video > .video-player > .video-thumb {
+    grid-area: main-image;
+    background-image: url("/assets/images/client-video.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
+    .video > .video-player > .video-thumb > .play-button {
+      grid-area: main-image;
+      margin: 100px auto; }
+  .video > .video-player > .right-caret {
+    float: right;
+    display: inline-block;
+    margin-top: -185px; }
   .video > .quote {
     margin: 25px auto;
     width: 34%;
