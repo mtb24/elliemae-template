@@ -30,8 +30,13 @@ a {
 }
 body {
   min-height: 100%;
+  width: 100%;
   margin: 0;
-  background:$bodyBackground;
+  background-color: $bodyBackground;
+  background: url('images/background/rooftop_blue_background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
 }
 
 %CTA {
@@ -41,98 +46,38 @@ body {
   grid-template-areas:
       "2-part-heading"
       "para-with-link";
-  & .para-with-link > a.cta {
-    display: block;
-    width: 100px;
-  }
-}
-
-%button {
-  padding: 10px;
-  border-radius: 3px;
-  border: 0;
-  color: $button-text-color;
-  font-weight: normal;
-}
-.btn-orange {
-  @extend %button;
-  background-color: $orange;
-  &:focus,
-  &:hover {
-    background-color: darken($orange, 5%);
-  }
-}
-.icon {
-  margin: 0;
-}
-
-.container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 300px 250px 225px 1fr 60px;
-  grid-gap: 0px;
-  grid-template-areas: 
-      "top"
-      "cta1"
-      "cta2"
-      "video"
-      "footer";
-}
-
-.top {
-  background: url('images/background/rooftop_blue_background.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  grid-area: top;
-}
-
-.hero-cta {
-  @extend %CTA;
-  color: $white;
-  margin: 50px;
-  width: 50%;
-  height: 100%;
 
   & > .two-part-heading  {
+    grid-area: 2-part-heading;
     margin: 10px 0;
 
     & > .two-part-top {
-      font-size: 1.4em;
+      font-size: 3.2rem;
       font-weight: 100;
     }
     
     & > .two-part-bottom {
-      font-size: 1.4em;
+      font-size: 3.0rem;
       font-weight: 200;
+      line-height: 3.2rem;
     }
   }
-
   & > .para-with-link {
+    grid-area: para-with-link;
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em;
+    & > a.cta {
+      grid-area: para-with-link;
+      width: 150px;
+      float: left;
+      margin: 20px 0;
+      text-align: center;
+    }
   }
 }
 
-.hero-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-  width: 50%;
-  margin: 25px 100px 0 0;
-
-  & > a.hero-links-wrapper {
-    justify-content: center;
-  }
-}
-.hero-link {
+%HeroLink {
   width: 180px;
   max-height: 80px;
   color: $white;
@@ -155,61 +100,107 @@ body {
     }
   }
 
-  & > .link1-icon,
-  & > .link2-icon,
-  & > .link3-icon {
+  & > .link-icon {
     grid-area: icon;
     align-content: center;
     justify-content: center;
   }
 }
-.link1 {
+
+%Button {
+  padding: 10px;
+  border-radius: 3px;
+  border: 0;
+  color: $button-text-color;
+  font-weight: normal;
+}
+.btn-orange {
+  @extend %Button;
   background-color: $orange;
+  &:focus,
+  &:hover {
+    background-color: darken($orange, 5%);
+  }
 }
-.link2 {
-  background-color: $green;
+.icon {
+  margin: 0;
 }
-.link3 {
-  background-color: $dark-blue;
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 250px 225px 1fr 60px;
+  grid-gap: 0px;
+  grid-template-areas: 
+      "top"
+      "cta1"
+      "cta2"
+      "video"
+      "footer";
 }
+
+.top {
+  grid-area: top;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.hero-cta {
+  @extend %CTA;
+  color: $white;
+  margin: 50px 100px;
+  width: 40%;
+  height: 75%;
+}
+
+.hero-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: end;
+  width: 50%;
+  margin: 25px 100px 0 0;
+
+  & > a.hero-links-wrapper {
+    justify-content: center;
+  }
+  #link1 {
+    @extend %HeroLink;
+    background-color: $orange;
+  }
+  #link2 {
+    @extend %HeroLink;
+    background-color: $green;
+  }
+  #link3 {
+    @extend %HeroLink;
+    background-color: $dark-blue;
+  }
+}
+
 
 .cta1 {
   @extend %CTA;
   grid-area: cta1;
   background-color: $white;
-
-  & > .two-part-heading {
-    grid-area: 2-part-heading;
-    margin: 10px 0;
-    
-    & > .two-part-top {
-      font-size: 1.2rem;
-      font-weight: 100;
-    }
-    
-    & > .two-part-bottom {
-      font-size: 1.4em;
-      font-weight: 200;
-    }
-  }
-  
-  & > .para-with-link {
-    grid-area: para-with-link;
-    margin: 10px 0;
-    font-weight: normal;
-    font-size: 1.1em;
-  }
+  color: $black;
 }
 
 .cta2 {
+  grid-area: cta2;
   background-image: url('images/background/encompass-ng-background.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  grid-area: cta2;
+  background-size: 100%;
+  background-position: 0px bottom;
 }
 
 .video {
+  grid-area: video;
   text-align: center;
   background-color: $white;
   padding: 65px 0;
@@ -244,6 +235,7 @@ body {
 }
 
 footer {
+  grid-area: footer;
   color: $white;
   background-color: $footer_background_color;
   text-align: center;
