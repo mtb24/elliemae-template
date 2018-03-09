@@ -71,8 +71,9 @@ body {
     & > .para-spacer {
       display: block;
     }
-    & > a.cta {
+    & > a {
       grid-area: para-with-link;
+      display: block;
       width: 150px;
       float: left;
       margin: 20px 0;

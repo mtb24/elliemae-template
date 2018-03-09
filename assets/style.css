@@ -47,8 +47,9 @@ body {
     font-size: 1.1em; }
     .hero-cta > .para-with-link > .para-spacer, .cta2 > .para-with-link > .para-spacer {
       display: block; }
-    .hero-cta > .para-with-link > a.cta, .cta2 > .para-with-link > a.cta {
+    .hero-cta > .para-with-link > a, .cta2 > .para-with-link > a {
       grid-area: para-with-link;
+      display: block;
       width: 150px;
       float: left;
       margin: 20px 0;
