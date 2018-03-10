@@ -2,8 +2,7 @@
 */
 html {
   box-sizing: border-box;
-  /* A system font stack so things load nice and quick! */
-  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: normal;
   font-size: 10px; }
 
