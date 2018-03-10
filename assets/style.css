@@ -30,24 +30,24 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
   grid-template-areas: "2-part-heading" "para-with-link"; }
-  .hero-cta > .two-part-heading, .cta2 > .two-part-heading {
+  .hero-cta > div > .two-part-heading, .cta2 > div > .two-part-heading {
     grid-area: 2-part-heading;
     margin: 10px 0; }
-    .hero-cta > .two-part-heading > .two-part-top, .cta2 > .two-part-heading > .two-part-top {
+    .hero-cta > div > .two-part-heading > .two-part-top, .cta2 > div > .two-part-heading > .two-part-top {
       font-size: 3.2rem;
       font-weight: 100; }
-    .hero-cta > .two-part-heading > .two-part-bottom, .cta2 > .two-part-heading > .two-part-bottom {
+    .hero-cta > div > .two-part-heading > .two-part-bottom, .cta2 > div > .two-part-heading > .two-part-bottom {
       font-size: 3.0rem;
       font-weight: 200;
       line-height: 3.2rem; }
-  .hero-cta > .para-with-link, .cta2 > .para-with-link {
+  .hero-cta > div > .para-with-link, .cta2 > div > .para-with-link {
     grid-area: para-with-link;
     margin: 10px 0;
     font-weight: normal;
     font-size: 1.1em; }
-    .hero-cta > .para-with-link > .para-spacer, .cta2 > .para-with-link > .para-spacer {
+    .hero-cta > div > .para-with-link > .para-spacer, .cta2 > div > .para-with-link > .para-spacer {
       display: block; }
-    .hero-cta > .para-with-link > a, .cta2 > .para-with-link > a {
+    .hero-cta > div > .para-with-link > a, .cta2 > div > .para-with-link > a {
       grid-area: para-with-link;
       display: block;
       width: 150px;
@@ -119,6 +119,81 @@ body {
 
 .icon {
   margin: 0; }
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    max-width: 320px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #container {
+    width: 100%;
+    max-width: 768px;
+    grid-template-rows: 240px 450px 180px 1fr 60px; }
+  .top {
+    display: block; }
+  #hero-cta {
+    display: block;
+    margin: 10px 0 0 10px;
+    width: 40%;
+    float: left; }
+    #hero-cta > div > .two-part-heading > .two-part-top {
+      font-size: 2.5rem; }
+    #hero-cta > div > .two-part-heading > .two-part-bottom {
+      font-size: 2.5rem;
+      line-height: 27px; }
+  #hero-links {
+    display: block;
+    width: 26%;
+    float: right;
+    margin: 0 0 0 251px; }
+    #hero-links > a.hero-link-wrapper {
+      margin: -2px auto; }
+  #cta1 > .cta1-heading {
+    margin: 50px auto 20px auto; }
+  #cta1 > .cta1-copy {
+    width: 80%; }
+  #icons-list {
+    grid-template-rows: 48px 27px;
+    width: 85%;
+    height: 140px;
+    max-width: 768px;
+    padding: 15px 10px; }
+    #icons-list > .cta1-icon {
+      width: 45px;
+      height: 45px;
+      background-size: 44px;
+      justify-items: center;
+      margin: 0; }
+      #icons-list > .cta1-icon > li.cta1-icon-link {
+        margin: 0; }
+    #icons-list > #icon-7 {
+      margin-left: 0px; }
+    #icons-list > .cta1-arrow {
+      background-position-y: 25px;
+      background-size: 100%;
+      width: 25px;
+      margin: 0; }
+  #cta2 > .cta2-wrapper {
+    max-width: 95%; }
+    #cta2 > .cta2-wrapper > .two-part-heading > .two-part-top {
+      font-size: 2.0rem; }
+    #cta2 > .cta2-wrapper > .two-part-heading > .two-part-bottom {
+      font-size: 2.0rem;
+      line-height: 18px; }
+  #video-wrapper {
+    margin: 0 auto 50px auto; }
+    #video-wrapper > .video-heading {
+      margin: 50px auto 0 auto; }
+    #video-wrapper > .video-player {
+      width: 80%; }
+    #video-wrapper > .quote {
+      width: 70%; } }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 100%;
+    max-width: 1280px; } }
 
 .container {
   width: 100%;
@@ -224,52 +299,54 @@ body {
 
 .cta2 {
   grid-area: cta2;
-  background-image: url("images/background/encompass-ng-background.png");
+  background-image: url("images/background/encompass.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0px bottom;
-  display: grid;
-  grid-template-columns: 535px 50%;
-  grid-template-rows: 100%;
-  grid-template-areas: "logo cta";
-  height: 330px;
-  color: #ffffff; }
-  .cta2 > #cta2-logo {
-    grid-area: logo;
-    margin: 13% 0 0 53%; }
-  .cta2 > .two-part-heading {
-    grid-area: cta;
-    margin: 30px 18%; }
-  .cta2 > .para-with-link {
-    grid-area: cta;
-    margin: 18% 18%; }
+  color: #ffffff;
+  padding-left: 45%;
+  display: block; }
+  .cta2 > .cta2-wrapper {
+    position: relative;
+    bottom: 2vh;
+    margin: 5%;
+    max-width: 70%; }
+    .cta2 > .cta2-wrapper > .two-part-heading {
+      width: 100%; }
+    .cta2 > .cta2-wrapper > .para-with-link {
+      width: 100%; }
 
 .video {
   grid-area: video;
   text-align: center;
   background-color: #ffffff;
-  margin: 70px auto; }
+  margin: 50px auto; }
   .video > .video-heading {
     color: #39a053;
     font-size: 2.5rem;
     font-weight: 400; }
-  .video > .video-player > .left-caret {
-    float: left;
-    display: inline-block;
-    margin-top: 165px; }
-  .video > .video-player > .video-thumb {
-    grid-area: main-image;
-    background-image: url("/assets/images/client-video.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; }
-    .video > .video-player > .video-thumb > .play-button {
+  .video > .video-player {
+    width: 55%;
+    margin: 0 auto; }
+    .video > .video-player > .left-caret {
+      float: left;
+      display: inline-block;
+      margin-top: 165px; }
+    .video > .video-player > .video-thumb {
       grid-area: main-image;
-      margin: 100px auto; }
-  .video > .video-player > .right-caret {
-    float: right;
-    display: inline-block;
-    margin-top: -185px; }
+      background-image: url("/assets/images/client-video.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 500px;
+      margin: 0 auto;
+      padding: 0; }
+      .video > .video-player > .video-thumb > .play-button {
+        grid-area: main-image;
+        margin: 100px auto; }
+    .video > .video-player > .right-caret {
+      float: right;
+      display: inline-block;
+      margin-top: -185px; }
   .video > .quote {
     margin: 25px auto;
     width: 34%;
