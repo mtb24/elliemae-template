@@ -121,9 +121,126 @@ body {
   margin: 0; }
 
 @media only screen and (max-width: 767px) {
-  .container {
+  body {
+    background-size: 125%; }
+  #container {
+    grid-template-rows: 125px 100px auto auto auto auto;
+    grid-template-areas: "top" "links" "cta1" "cta2" "video" "footer";
     width: 100%;
-    max-width: 320px; } }
+    max-width: 320px; }
+    #container > #top {
+      display: block;
+      grid-area: top;
+      width: 100%; }
+      #container > #top > #hero-cta {
+        margin: 0 auto;
+        height: 100%;
+        width: 100%; }
+        #container > #top > #hero-cta > div > .two-part-heading {
+          margin: 10px 0 0 10px; }
+          #container > #top > #hero-cta > div > .two-part-heading > .two-part-top,
+          #container > #top > #hero-cta > div > .two-part-heading > .two-part-bottom {
+            font-size: 2.0rem;
+            line-height: 22px; }
+        #container > #top > #hero-cta > div > .para-with-link {
+          grid-area: unset;
+          display: none; }
+          #container > #top > #hero-cta > div > .para-with-link > a.cta {
+            display: none; }
+      #container > #top > #hero-links {
+        grid-area: links;
+        margin: 0;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 45px);
+        width: 100%;
+        align-items: start;
+        justify-items: center; }
+        #container > #top > #hero-links > .hero-link-wrapper {
+          margin: 0;
+          width: 100%; }
+          #container > #top > #hero-links > .hero-link-wrapper > .hero-link {
+            max-width: 100%;
+            max-height: 50px;
+            grid-template-columns: 1fr 55px;
+            justify-items: start; }
+            #container > #top > #hero-links > .hero-link-wrapper > .hero-link > .hero-link-details {
+              padding-left: 10px; }
+              #container > #top > #hero-links > .hero-link-wrapper > .hero-link > .hero-link-details > .hero-link-title {
+                margin: 1px 0 0 0; }
+              #container > #top > #hero-links > .hero-link-wrapper > .hero-link > .hero-link-details > .hero-link-description {
+                margin: 0;
+                padding: 0; }
+    #container > #cta1 {
+      margin-top: 37px; }
+      #container > #cta1 > .cta1-heading {
+        margin: 20px auto;
+        font-size: 1.5rem;
+        width: 75%; }
+      #container > #cta1 > .cta1-copy {
+        width: 80%; }
+      #container > #cta1 > #icons-list {
+        width: 80%;
+        max-width: 80%;
+        padding: 25px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+        margin: 0 auto; }
+        #container > #cta1 > #icons-list > #icon-7 {
+          transform: translateY(80px); }
+        #container > #cta1 > #icons-list > .cta1-icon {
+          grid-template-rows: 95px 40px;
+          width: 90px;
+          height: 90px;
+          background-size: 100%;
+          margin: 13px auto; }
+          #container > #cta1 > #icons-list > .cta1-icon > .cta1-icon-link {
+            font-size: 1.5rem;
+            width: 95px; }
+        #container > #cta1 > #icons-list > .cta1-arrow {
+          transform: rotateZ(90deg);
+          background-size: 80%;
+          width: 55px;
+          height: 55px;
+          margin: 30px 75px; }
+        #container > #cta1 > #icons-list > #arrow-5 {
+          margin: 38px 75px; }
+      #container > #cta1 > #cta1-btn {
+        margin-top: 75px; }
+    #container > #cta2 {
+      background-size: cover;
+      padding: 0;
+      background-position-x: -185px;
+      margin-bottom: 220px; }
+      #container > #cta2 > #cta2-wrapper {
+        color: #272727;
+        bottom: -280px;
+        margin: 0 auto; }
+        #container > #cta2 > #cta2-wrapper > .para-with-link > #cta2-btn {
+          margin: 20px auto 0 32px; }
+    #container > #video-wrapper {
+      margin: 75px auto; }
+      #container > #video-wrapper > #video-heading {
+        font-size: 2rem;
+        margin: 0 auto;
+        transform: translateY(60px); }
+      #container > #video-wrapper > #video-player {
+        width: 100%; }
+        #container > #video-wrapper > #video-player > .left-caret {
+          margin: 160px 0 0 10px; }
+        #container > #video-wrapper > #video-player > .video-thumb {
+          width: 100%; }
+          #container > #video-wrapper > #video-player > .video-thumb > .play-button {
+            transform: translateX(-10px); }
+        #container > #video-wrapper > #video-player > .right-caret {
+          margin: -190px 10px 0 0; }
+      #container > #video-wrapper > #quote {
+        width: 80%;
+        margin: -50px auto 0 auto; }
+    #container > #the-footer > #footer-copy {
+      font-size: 1.2rem;
+      margin-top: 0; }
+      #container > #the-footer > #footer-copy > .footer {
+        margin-top: 5px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   #container {

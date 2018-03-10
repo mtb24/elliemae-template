@@ -169,9 +169,169 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-  .container {
+  body {
+    background-size: 125%;
+  }
+  #container {
+    grid-template-rows: 125px 100px auto auto auto auto;
+    grid-template-areas: "top" "links" "cta1" "cta2" "video" "footer";
     width: 100%;
     max-width: 320px;
+    & > #top {
+      display: block;
+      grid-area: top;
+      width: 100%;
+      & > #hero-cta {
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        & > div > .two-part-heading {
+          margin: 10px 0 0 10px;
+          & > .two-part-top,
+          & > .two-part-bottom {
+            font-size: 2.0rem;
+            line-height: 22px;
+          }
+        }
+        & > div > .para-with-link {
+          grid-area: unset;
+          display: none;
+          & > a.cta {
+            display: none;
+          }
+        }
+      }
+      & > #hero-links {
+        grid-area: links;
+        margin: 0;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 45px);
+        width: 100%;
+        align-items: start;
+        justify-items: center;
+        & > .hero-link-wrapper {
+          margin: 0;
+          width: 100%;
+          & > .hero-link {
+            max-width: 100%;
+            max-height: 50px;
+            grid-template-columns: 1fr 55px;
+            justify-items: start;
+            
+            & > .hero-link-details {
+              padding-left: 10px;
+              & > .hero-link-title {
+                margin: 1px 0 0 0;
+              }
+              & > .hero-link-description {
+                margin: 0;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    & > #cta1 {
+      margin-top: 37px;
+      & > .cta1-heading {
+        margin: 20px auto;
+        font-size: 1.5rem;
+        width: 75%;
+      }
+      & > .cta1-copy {
+        width: 80%;
+      }
+      & > #icons-list {
+        width: 80%;
+        max-width: 80%;
+        padding: 25px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+        margin: 0 auto;
+        & > #icon-7 {
+          transform: translateY(80px);
+
+        }
+        & > .cta1-icon {
+          grid-template-rows: 95px 40px;
+          width: 90px;
+          height: 90px;
+          background-size: 100%;
+          margin: 13px auto;
+          
+          & > .cta1-icon-link {
+            font-size: 1.5rem;
+            width: 95px;
+          }
+        }
+        & > .cta1-arrow {
+          transform: rotateZ(90deg);
+          background-size: 80%;
+          width: 55px;
+          height: 55px;
+          margin: 30px 75px;
+        }
+        & > #arrow-5 {
+          margin: 38px 75px;
+        }
+      }
+      & > #cta1-btn {
+        margin-top: 75px;
+      }
+    }
+    & > #cta2 {
+      background-size: cover;
+      padding: 0;
+      background-position-x: -185px;
+      margin-bottom: 220px;
+      & > #cta2-wrapper {
+        color: $black;
+        bottom: -280px;
+        margin: 0 auto;
+        & > .para-with-link > #cta2-btn {
+          margin: 20px auto 0 32px;
+        }
+      }
+
+    }
+    & > #video-wrapper {
+      margin: 75px auto;
+      & > #video-heading {
+        font-size: 2rem;
+        margin: 0 auto;
+        transform: translateY(60px);
+      }
+      & > #video-player {
+        width: 100%;
+        & > .left-caret {
+          margin: 160px 0 0 10px;
+        }
+        & > .video-thumb {
+          width: 100%;
+          & > .play-button {
+            transform: translateX(-10px);
+          }
+        }
+        & > .right-caret {
+          margin: -190px 10px 0 0;
+        }
+      }
+      & > #quote {
+        width: 80%;
+        margin: -50px auto 0 auto;
+      }
+    }
+    & > #the-footer {
+      
+      & > #footer-copy {
+        font-size: 1.2rem;
+        margin-top: 0;
+        & > .footer {
+          margin-top: 5px;
+        }
+      }
+    }
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -274,8 +434,6 @@ body {
   .container {
     width: 100%;
     max-width: 1280px;
-  }
-  .cta2-wrapper {
   }
 }
 
